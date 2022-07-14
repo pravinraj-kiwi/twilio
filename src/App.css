@@ -141,3 +141,40 @@ footer {
 footer a {
   color: #fff;
 }
+
+/* DivTable.com */
+.divTable{
+	display: table;
+border-collapse: separate;
+  border-spacing: 10px;
+}
+.divTableRow {
+	display: table-row;
+
+}
+.divTableHeading {
+
+	display: table-header-group;
+
+}
+.divTableCell {
+	
+
+
+ height: 200px;
+ width: 200px;
+}
+.divTableHeading {
+	
+	display: table-header-group;
+
+}
+.divTableFoot {
+	
+	display: table-footer-group;
+
+}
+.divTableBody {
+	display: table-row-group;
+
+}

@@ -1,6 +1,7 @@
 const twilio = require('twilio');
 const AccessToken = twilio.jwt.AccessToken;
 const { VideoGrant } = AccessToken;
+require('dotenv').config();
 
 const generateToken = config => {
   return new AccessToken(
@@ -12,6 +13,7 @@ const generateToken = config => {
 
 const videoToken = (identity, room, config) => {
   let videoGrant;
+
   if (typeof room !== 'undefined') {
     videoGrant = new VideoGrant({ room });
   } else {
@@ -23,4 +25,16 @@ const videoToken = (identity, room, config) => {
   return token;
 };
 
-module.exports = { videoToken };
+const MyvideoToken = (identity, config) => {
+  let videoGrant;
+
+ 
+    videoGrant = new VideoGrant();
+  
+  const token = generateToken(config);
+  token.addGrant(videoGrant);
+  token.identity = identity;
+  return token;
+};
+
+module.exports = { videoToken, MyvideoToken };
